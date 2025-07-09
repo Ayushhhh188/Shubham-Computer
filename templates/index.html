@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Computer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <!-- ─────── Header ─────── -->
+    <header>
+        <nav>
+            <h1>Shubham Computer</h1>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#location">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ─────── Hero Section ─────── -->
+    <section class="hero fade-in">
+        <h2>Reliable Computer & Online Services</h2>
+        <h1>Fast. Easy. Affordable.</h1>  
+        <p>Your one-stop solution for ticket booking, printing, and more in Ranchi.</p>
+    </section>
+
+    <!-- ─────── Services Section ─────── -->
+    <section id="services" class="fade-in">
+        <div class="service-grid">
+            <div class="service-card" onclick="openModal('ticketModal')">
+                <img src="{{ url_for('static', filename='icons/ticket.png') }}" alt="Ticket">
+                <h3>Ticket Booking</h3>
+                <p class="description">Book train, bus, and flight tickets with ease.</p>
+            </div>
+
+            <div class="service-card" onclick="openModal('composingModal')">
+                <img src="{{ url_for('static', filename='icons/compose.png') }}" alt="Composing">
+                <h3>Computer Composing</h3>
+                <p class="description">Professional typing and formatting services.</p>
+            </div>
+
+            <div class="service-card" onclick="openModal('documentModal')">
+                <img src="{{ url_for('static', filename='icons/document.png') }}" alt="Document">
+                <h3>Document Work</h3>
+                <p class="description">Editing, formatting, and processing documents.</p>
+            </div>
+
+            <div class="service-card" onclick="openModal('printModal')">
+                <img src="{{ url_for('static', filename='icons/print.png') }}" alt="Print">
+                <h3>Computer Print</h3>
+                <p class="description">High-quality color and B/W printing.</p>
+            </div>
+
+            <div class="service-card" onclick="openModal('xeroxModal')">
+                <img src="{{ url_for('static', filename='icons/xerox.png') }}" alt="Xerox">
+                <h3>Xerox</h3>
+                <p class="description">Fast and clear photocopying service.</p>
+            </div>
+
+            <div class="service-card" onclick="openModal('laminationModal')">
+                <img src="{{ url_for('static', filename='icons/laminate.png') }}" alt="Lamination">
+                <h3>Lamination</h3>
+                <p class="description">Protect documents with smooth lamination.</p>
+            </div>
+
+            <!-- You can add 3 more services here to complete the 3×3 grid -->
+        </div>
+    </section>
+
+    <!-- ─────── About Section ─────── -->
+    <section id="about" class="fade-in">
+        <h2>About Us</h2>
+        <p>We provide professional digital services in Ranchi, including ticket booking, printing, scanning, and lamination. Your documents are in expert hands.</p>
+        <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">11am - 8pm</div>
+          <div class="stat-label">Mon to Sat</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ─────── Contact Section ─────── -->
+    <section id="contact" class="fade-in">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:shubhamcomputer2001@gmail.com">shubhamcomputer2001@gmail.com</a></p>
+        <p>Phone: <a href="tel:9708571206">9708571206</a></p>
+        <p>Address: Opp. Cambrian Public School, Gonda Town, Kanke Road, Ranchi - 834008, Jharkhand</p>
+    </section>
+
+    <!-- ─────── Map Section ─────── -->
+    <section id="location" class="fade-in">
+        <h2>Find Us Here</h2>
+        <iframe src="https://www.google.com/maps?q=Gonda+Town,+Kanke+Road,+Ranchi&output=embed" allowfullscreen></iframe>
+    </section>
+
+    <!-- ─────── Modal Overlay ─────── -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeAllModals()"></div>
+
+    <!-- ─────── Service Modals (in modals.html) ─────── -->
+    {% include 'modals.html' %}
+</body>
+</html>

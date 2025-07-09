@@ -1,0 +1,108 @@
+<!-- Modal Overlay -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeAllModals()"></div>
+
+<!-- Ticket Booking Modal -->
+<div id="ticketModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('ticketModal')">&times;</button>
+    <h2>Ticket Booking</h2>
+    <p>Advance online railway ticket booking available via IRCTC portal.</p>
+    <p>Railway tickets can be booked up to 120 days in advance.</p>
+    <p><strong>No Tatkal bookings.</strong></p>
+    <p>
+      Air tickets are available via VIA World Agent and can be booked up to
+      365 days in advance.
+    </p>
+    <p><strong>Note:</strong> Additional service charges apply on each booking.</p>
+  </div>
+</div>
+
+<!-- Computer Composing Modal -->
+<div id="composingModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('composingModal')">&times;</button>
+    <h2>Computer Composing</h2>
+
+    <div class="form-group">
+      <label for="pagesInput">Number of pages:</label>
+      <input type="number" id="pagesInput" oninput="calcComposingCost()">
+    </div>
+
+    <div class="form-group">
+      <label for="language">Language:</label>
+      <select id="language" onchange="calcComposingCost()">
+        <option value="English">English</option>
+        <option value="Hindi">Hindi</option>
+      </select>
+    </div>
+
+    <p><strong>Cost:</strong> <span id="composingCost">₹0</span></p>
+    <p class="note">Note: No promised deadlines. Work will be completed based on current workload.</p>
+  </div>
+</div>
+
+<!-- Document Work Modal -->
+<div id="documentModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('documentModal')">&times;</button>
+    <h2>Document Work</h2>
+    <p>We assist in filling forms: government, private, or online documents.</p>
+    <p><strong>Fee:</strong> ₹100 per successfully completed form.</p>
+  </div>
+</div>
+
+<!-- Print Modal -->
+<div id="printModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('printModal')">&times;</button>
+    <h2>Computer Print</h2>
+
+    <div class="form-group">
+      <label for="printPages">Number of pages:</label>
+      <input type="number" id="printPages" oninput="calcPrintCost()">
+    </div>
+
+    <div class="form-group">
+      <label>Type:</label><br>
+      <label><input type="radio" name="printType" value="bw" checked onchange="calcPrintCost()"> B&W</label>
+      <label><input type="radio" name="printType" value="colour" onchange="calcPrintCost()"> Colour</label>
+    </div>
+
+    <div class="form-group">
+      <label for="paperType">Paper Type:</label>
+      <select id="paperType" onchange="calcPrintCost()">
+        <option value="a4">A4</option>
+        <option value="photo">Photo Paper</option>
+        <option value="thick">Thick A4 Paper</option>
+      </select>
+    </div>
+
+    <p><strong>Cost:</strong> <span id="printCost">₹0</span></p>
+  </div>
+</div>
+
+<!-- Xerox Modal -->
+<div id="xeroxModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('xeroxModal')">&times;</button>
+    <h2>Xerox</h2>
+
+    <div class="form-group">
+      <label for="xeroxPages">Number of pages:</label>
+      <input type="number" id="xeroxPages" oninput="calcXeroxCost()">
+    </div>
+
+    <p><strong>Cost:</strong> <span id="xeroxCost">₹0</span></p>
+    <p class="note">Note: Colour Xerox is available. Charges vary depending on requirement.</p>
+  </div>
+</div>
+
+<!-- Lamination Modal -->
+<div id="laminationModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('laminationModal')">&times;</button>
+    <h2>Lamination & More</h2>
+    <p>Available services: Lamination, Spiral Binding, Passport Photo Printouts , High Quality Document Scanning.</p>
+    <p class="note">Charges are based on quantity and type of service.</p>
+  </div>
+</div>
