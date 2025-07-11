@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.calcComposingCost = () => {
         const pages = parseInt(document.getElementById('pagesInput').value) || 0;
         const language = document.getElementById('language').value;
-        const rate = language === 'English' ? 10 : 20;
+        const rate = language === 'English' ? 30 : 40;
         const total = pages * rate;
         document.getElementById('composingCost').textContent = `₹${total}`;
     };
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Xerox Modal: ₹3/page B&W
     window.calcXeroxCost = () => {
         const pages = parseInt(document.getElementById('xeroxPages').value) || 0;
-        const rate = 3;
+        const rate = 2;
         const total = pages * rate;
         document.getElementById('xeroxCost').textContent = `₹${total}`;
     };
